@@ -4,27 +4,39 @@ import BackgroundVideo from "./BackgroundVideo";
 const Hero = () => {
   const headingStyle =
     "font-playfair-display font-extrabold text-4xl bg-amber-300 mb-4";
+  const largeTextClass =
+    "font-playfair-display font-extrabold text-[15vh] leading-[0.9] tracking-tighter uppercase";
+  const navTextClass =
+    "font-playfair-display font-extrabold text-[10vh] leading-[0.85] hover:italic transition-all cursor-pointer";
+
   return (
-    <div>
+    <div className="h-screen w-full overflow-hidden">
       <BackgroundVideo>
-        <div className="relative z-20 flex h-full flex-col px-4 ">
-          <h1 className="text-4xl font-bold text-white md:text-6xl">
-            Built for Performance
-          </h1>
-          <p className="mt-4 text-lg text-gray-200">
-            Clean, scalable, and visually immersive interfaces.
-          </p>
-          <section className="max-w-7xl mx-auto w-full">
-            <header>
-              <h1 className={headingStyle}>Primary Heading</h1>
-            </header>
-            <article>
-              <h2 className={headingStyle}>Secondary Section</h2>
-              <p className="text-gray-700">
-                By using mx-auto, this container stays centered regardless of
-                screen size.
-              </p>
-            </article>
+        <div className="relative z-20 flex h-full items-center px-8">
+          <section className="mx-auto w-full max-w-[1800px]">
+            <div className="flex flex-col lg:flex-row justify-between items-end lg:items-center gap-8">
+              {/* Left Side: Headline */}
+              <div className="max-w-[80%]">
+                <h1 className={`${largeTextClass} text-[#EC0505]`}>
+                  Cinematic  Experiences. <br />
+                  <span className="text-white">Engineered.</span>
+                </h1>
+                <p className="mt-6  text-lg font-extralight text-gray-300">
+                  Focused on backend development and the fundamentals of deep
+                  computer science.
+                </p>
+              </div>
+
+              <nav className="flex flex-col items-end justify-between  h-screen text-right border-r-4 border-[#EC0505] pr-6 py-10">
+                <p className={navTextClass}>Home</p>
+                <div>
+                  <p className={navTextClass}>Projects</p>
+                  <p className={navTextClass}>Works</p>
+                  <p className={navTextClass}>Blog</p>
+                </div>
+                <p className={navTextClass}>Contact</p>
+              </nav>
+            </div>
           </section>
         </div>
       </BackgroundVideo>
