@@ -11,6 +11,8 @@ const FirstSlide = () => {
   const mainText = useRef(null);
   const subgText = useRef(null);
   const textContainer = useRef(null);
+  const subImage = useRef(null);
+
   useGSAP(() => {
     const timeline = gsap.timeline({
       scrollTrigger: {
@@ -26,22 +28,21 @@ const FirstSlide = () => {
     timeline.from(mainText.current, {
       y: "100%",
       opacity: 0,
-      ease: "power2.out",
-      duration: 1,
+      ease: "power2.inOut",
+      duration: 5,
     });
 
     timeline.from(subgText.current, {
       opacity: 0,
-      ease: "power2.out",
-      duration: 1,
+      ease: "power2.inOut",
+      duration: 2,
     });
 
-    // timeline.to(textContainer.current, {
-    //   scale: 9,
-    //   opacity: 0,
-    //   ease: "power2.out",
-    //   duration: 1,
-    // });
+    timeline.from(subImage.current, {
+      y: "100%",
+      duration: 6,
+    });
+
     
   }, []);
   return (
@@ -56,6 +57,13 @@ const FirstSlide = () => {
           src="/bg.png"
           alt=""
           className="absolute top-0 left-0 h-full w-full object-cover z-0"
+        />
+
+        <img
+          src="1slide.png"
+          className=" absolute z-40 rotate-20 bottom-[-200px]"
+          alt=""
+          ref={subImage}
         />
 
         {/* <div className="absolute inset-0 z-10 bg-black/40" /> */}
