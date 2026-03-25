@@ -40,8 +40,8 @@ const About = () => {
 
     tl.from(subImage.current, {
       y: "80%",
-      duration: 6,
-    });
+      duration: 3,
+    })
   }, []);
   return (
     <section ref={containerRef} className=" relative h-screen w-full  bg-black">

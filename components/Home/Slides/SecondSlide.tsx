@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FirstSlide = () => {
+const SecondSlide = () => {
   const containerRef = useRef(null);
   const mainText = useRef(null);
   const subgText = useRef(null);
@@ -44,13 +44,13 @@ const FirstSlide = () => {
     });
 
     timeline.to(containerRef.current, {
-      x: "-100%",
+      x: "100%",
       duration: 6,
     });
     timeline.to(
       subImage.current,
       {
-        x: "50%",
+        x: "-50%",
         duration: 6,
       },
       "<",
@@ -67,31 +67,30 @@ const FirstSlide = () => {
         <img
           src="/bg.png"
           alt=""
-          className="absolute top-0 left-0 h-full w-full object-cover z-0"
+          className="absolute top-0 left-0 h-full w-full object-cover z-0 rotate-180"
         />
 
         <img
-          src="1slide.png"
+          src="2slide.png"
           className=" absolute z-40 rotate-20 bottom-[-200px]"
           alt=""
           ref={subImage}
         />
 
-        {/* <div className="absolute inset-0 z-10 bg-black/40" /> */}
         <div
           ref={textContainer}
-          className="relative z-20 h-screen  flex  items-center justify-center px-8"
+          className="relative z-20 h-screen  flex flex-col items-center justify-center"
         >
-          <div>
+          <div className="max-w-7xl">
             <p
               ref={mainText}
-              className="text-[#CC0000]  text-[20vw] font-playfair-display font-bold"
+              className="text-[#CC0000] w-fit text-9xl font-playfair-display font-bold"
             >
-              PATIENT
+              DIFFERENT
             </p>
             <p
               ref={subgText}
-              className="text-[#CC0000] text-center text-[2vw]  font-light"
+              className="text-[#CC0000] text-center   font-light"
             >
               FOR REAL
             </p>
@@ -102,4 +101,4 @@ const FirstSlide = () => {
   );
 };
 
-export default FirstSlide;
+export default SecondSlide;
